@@ -8,10 +8,8 @@ img, embed, object, video {
 
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10pt;
-	color: #333;
-	line-height: 1.5;
 }
+
 body {
 	background-color: #fdfdfd;
 	margin: 0;
@@ -43,20 +41,21 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 #maincontent {
   background-color: #f3f3f3;
-  min-height: 100%;
+  /* min-height: 100%; */
 }
 #footer {
-  /* background-color: #444; */
-  /* background-color: #252831; */
   background-color: #104673;
-  color: #aaa;
-  font-size: 8pt;
+  color: #e2e2e2;
+  font-size: .75em;
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
 }
 
+#footer strong {
+	font-size: 1.2em;
+}
 #restaurants {
 	text-align: center;
 }
@@ -67,12 +66,12 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
-  /* height: 80px; */
   background-color: #104673;
   text-align:center;
 }
 nav h1 {
   margin: auto;
+	padding: 10px;
 }
 nav h1 a {
   color: #fff;
@@ -113,6 +112,19 @@ nav h1 a {
     color: #01447e;
     text-decoration: underline;
 }
+
+@media screen and (max-width: 320px) {
+	nav h1 a {
+	  font-size: .6em;
+	}
+}
+
+@media screen and (max-width: 599px) {
+	nav h1 a {
+	  font-size: 1.2em;
+	}
+}
+
 /* ====================== Map ====================== */
 #map {
   height: 400px;
@@ -127,15 +139,44 @@ nav h1 a {
 }
 .filter-label {
   color: white;
-  font-size: 2em;
+  font-size: 1.6em;
 	font-weight: normal;
 }
 .filter-options select {
   background-color: white;
   font-family: Arial,sans-serif;
-  font-size: 1.5em;
+  font-size: 1.3em;
 	padding: 10px;
   margin-left: 10px;
+}
+
+@media screen and (max-width: 320px) {
+	.filter-label {
+  	font-size: .7em;
+	}
+	.filter-options select {
+	  font-size: .8em;
+		padding: 2px;
+	}
+}
+
+@media screen and (max-width: 599px) {
+	.filter-label {
+  	font-size: 1em;
+	}
+	.filter-options select {
+	  font-size: 1em;
+		padding: 5px;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+	.filter-label {
+  	font-size: 1.3em;
+	}
+	.filter-options select {
+	  font-size: 1em;
+	}
 }
 
 /* ====================== Restaurant Listing ====================== */
