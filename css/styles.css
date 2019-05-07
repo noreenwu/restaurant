@@ -23,7 +23,8 @@ ul, li {
 	color: #333;
 }
 a {
-	color: orange;
+	/* color: orange; */
+	color: white;
 	text-decoration: none;
 }
 a:hover, a:focus {
@@ -45,7 +46,9 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   min-height: 100%;
 }
 #footer {
-  background-color: #444;
+  /* background-color: #444; */
+  /* background-color: #252831; */
+  background-color: #104673;
   color: #aaa;
   font-size: 8pt;
   letter-spacing: 1px;
@@ -64,8 +67,8 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
-  height: 80px;
-  background-color: #252831;
+  /* height: 80px; */
+  background-color: #104673;
   text-align:center;
 }
 nav h1 {
@@ -73,8 +76,8 @@ nav h1 {
 }
 nav h1 a {
   color: #fff;
-  font-size: 14pt;
-  font-weight: 200;
+  font-size: 2em;
+  font-weight: normal;
   letter-spacing: 10px;
   text-transform: uppercase;
 }
@@ -119,28 +122,20 @@ nav h1 a {
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
-  height: 50px;
-	padding-bottom: 30px;
-  background-color: #3397DB;
-  align-items: center;
+	padding: 20px 45px;
+  background-color: #104673;
 }
-.filter-options h2 {
+.filter-label {
   color: white;
-  font-size: 1rem;
-  font-weight: normal;
-  line-height: 1;
-  margin: 0 20px;
+  font-size: 2em;
+	font-weight: normal;
 }
 .filter-options select {
   background-color: white;
-  border: 1px solid #fff;
   font-family: Arial,sans-serif;
-  font-size: 11pt;
-  /* height: 35px; */
-  letter-spacing: 0;
-  /* margin: 10px;
-  padding: 0 10px;
-  width: 200px; */
+  font-size: 1.5em;
+	padding: 10px;
+  margin-left: 10px;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -165,7 +160,8 @@ nav h1 a {
 }
 
 #restaurants-list li h1 {
-	color: #f18200;
+	/* color: #f18200; */
+	color: #720500;
 	font-family: Arial,sans-serif;
 	font-size: 14pt;
 	font-weight: 200;
@@ -176,11 +172,13 @@ nav h1 a {
 }
 #restaurants-list p {
 	margin: 0;
-	font-size: 11pt;
+	font-size: 1.2em;
 }
 #restaurants-list li a {
-	background-color: orange;
-	border-bottom: 3px solid #eee;
+	/* background-color: orange; */
+	background-color: #720500;
+	/* border-bottom: 3px solid #eee; */
+	border-bottom: 1px solid #8f2e1e;
 	color: #fff;
 	display: inline-block;
 	font-size: 10pt;
