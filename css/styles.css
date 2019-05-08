@@ -273,11 +273,12 @@ nav h1 a {
 
 
 /* ====================== Restaurant Details ====================== */
+
 .inside header {
   /* position: fixed;
-  top: 0;
+  top: 0; */
   width: 100%;
-  z-index: 1000; */
+  z-index: 1000;
 }
 .inside #map-container {
   /* background: blue none repeat scroll 0 0;
@@ -292,6 +293,12 @@ nav h1 a {
   height: 100%;
   width: 100%;
 }
+
+
+
+
+
+
 .inside #footer {
   /* bottom: 0;
   position: absolute; */
@@ -308,7 +315,7 @@ nav h1 a {
   /* line-height: 1.1; */
 }
 #restaurant-img {
-	width: 90%;
+	width: 95%;
 }
 #restaurant-address {
   font-size: 1.2em;
@@ -324,13 +331,13 @@ nav h1 a {
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-	width: 90%;
+	width: 95%;
 }
 #restaurant-container {
   /* border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   padding: 140px 40px 30px; */
-	padding: 10px 0 10px 30px;
+	padding: 24px 0 10px 30px;
 	/* margin: 10px; */
   width: 50%;
 }
@@ -338,54 +345,41 @@ nav h1 a {
 
 #reviews-container {
   /* padding: 30px 40px 80px; */
-	background-color: purple;
+	background-color: #c3c3c3;
+	padding-bottom: 20px;
+	margin: 10px;	
 }
 #reviews-container h2 {
   color: #720500;
   font-size: 2em;
   font-weight: normal;
+	padding: 15px 40px 0;
 	/* color: white; */
   /* letter-spacing: -1px;
   padding-bottom: 1pt; */
+
 }
 #reviews-list {
   /* padding: 0; */
 	/* padding: 15px; */
-	margin: auto;
-	width: 100%;
+	/* margin: auto; */
+	width: 95%;
 }
 #reviews-list li {
   background-color: #fff;
   list-style-type: none;
-  border: 5px solid #f3f3f3;
-	padding: 0 10px;
-  /* padding: 0 20px 20px; */
-
-#other-list li {
-	background-color: white;
-	display: block;
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid red;
+  border: 8px solid #c3c3c3;
+	padding: 0 20px;
 }
 
-ul#other-list p {
-	color: white;
-}
-/*  display: block;
-  margin: 0 0 30px;
-  overflow: hidden;
-  padding: 0 20px 20px;
-  position: relative;
-  width: 85%; */
-}
+
 #reviews-list li p {
   /* margin: 0 0 10px; */
 	font-size: 1.2em;
 }
 #restaurant-hours td {
   color: #666;
-	font-size: 1.1em;
+	font-size: 1.2em;
 }
 
 
