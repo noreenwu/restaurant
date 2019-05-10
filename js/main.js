@@ -36,6 +36,13 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
     option.value = neighborhood;
+    const att = document.createAttribute("role");
+    att.value = "option";
+    option.setAttributeNode(att);
+    const att2 = document.createAttribute("aria-setsize");
+    att2.value = "4";
+    option.setAttributeNode(att2);
+
     select.append(option);
   });
 }
@@ -64,6 +71,10 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     const option = document.createElement('option');
     option.innerHTML = cuisine;
     option.value = cuisine;
+    const att = document.createAttribute("role");
+    att.value = "option";
+    option.setAttributeNode(att);
+        
     select.append(option);
   });
 }
@@ -161,6 +172,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = " ";     /* restaurant name is already in header and on link */
   li.append(image);
 
   const name = document.createElement('h1');
@@ -175,12 +187,17 @@ createRestaurantHTML = (restaurant) => {
   address.innerHTML = restaurant.address;
   li.append(address);
 
+  /* aria-label introduced to links to restaurant detail pages
+    so that those using screenreaders will know what the links are for */
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
+  var arialabel = document.createAttribute('aria-label');
+  arialabel.value = restaurant.name;
+  more.setAttributeNode(arialabel);
   more.href = DBHelper.urlForRestaurant(restaurant);
-  li.append(more)
+  li.append(more);
 
-  return li
+  return li;
 }
 
 /**

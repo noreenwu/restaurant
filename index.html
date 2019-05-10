@@ -16,24 +16,27 @@
     </nav>
   </header>
 
-  <main id="maincontent">
+  <main role="main" aria-label="maincontent" id="maincontent">
     <section id="map-container">
       <div id="map"></div>
     </section>
     <section>
       <div class="filter-options">
         <span class="filter-label">Filter Results: </span>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-          <option value="all">All Neighborhoods</option>
+        <select role="listbox" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+          <option value="all" role="option" aria-setsize="4">All Neighborhoods</option>
+
         </select>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
-          <option value="all">All Cuisines</option>
+        <label class="screenreader" for="neighborhoods-select">Select a neighborhood</label>
+        <select role="listbox" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+          <option value="all" role="option">All Cuisines</option>
         </select>
+        <label class="screenreader" for="cuisines-select">Select a cuisine</label>
       </div>
 
-      <section id="restaurants">
+      <section role="contentinfo" aria-label="restaurants matching your filter choices" id="restaurants">
         <div class="restaurants-container">
-          <ul id="other-list"></ul>
+          <!-- <ul id="other-list"></ul> -->
           <ul id="restaurants-list"></ul>
         </div>
       </section>
