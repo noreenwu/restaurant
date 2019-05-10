@@ -465,3 +465,9 @@ section#top {
 	flex-wrap: wrap;
 	margin: 10px;
 }
+
+
+label.screenreader  {
+	position: absolute;
+	text-indent: -10000px;
+}
