@@ -11,7 +11,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added
   fetchNeighborhoods();
   fetchCuisines();
+  // register ServiceWorker
+  startServiceWorker();
 });
+
+function startServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then(function() {
+      console.log("registration of service worker OK");
+    }).catch(function() {
+      console.log("registration of service worker failed.");
+    });
+  }
+}
 
 /**
  * Fetch all neighborhoods and set their HTML.
@@ -23,6 +35,9 @@ fetchNeighborhoods = () => {
     } else {
       self.neighborhoods = neighborhoods;
       fillNeighborhoodsHTML();
+      /* todo: add an event listener to the filter listbox so that
+        voiceover works on the hovered over selections */
+
     }
   });
 }
@@ -32,21 +47,44 @@ fetchNeighborhoods = () => {
  */
 fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   const select = document.getElementById('neighborhoods-select');
+  // item.addEventListener('mouseover', this.handleHoverOnItem.bind(this));
+  // item.addEventListener('mousedown', this.handleClickOnItem.bind(this), true);
+
+  let i = 2;    // aria-posinset
   neighborhoods.forEach(neighborhood => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
     option.value = neighborhood;
+
     const att = document.createAttribute("role");
     att.value = "option";
     option.setAttributeNode(att);
+
     const att2 = document.createAttribute("aria-setsize");
-    att2.value = "4";
+    att2.value = neighborhoods.length + 1; // one choice is in the html
     option.setAttributeNode(att2);
+
+    const att3 = document.createAttribute("aria-posinset");
+    att3.value = i++;
+    option.setAttributeNode(att3);
 
     select.append(option);
   });
+
+   let nSelections = select.querySelectorAll('[role=option]');
+   console.log(nSelections.length);
+
+   select.addEventListener('mouseenter', hello);
+   nSelections[1].addEventListener('mousedown', again);
 }
 
+function hello() {
+  console.log("hello");
+}
+
+function again() {
+  console.log("again");
+}
 /**
  * Fetch all cuisines and set their HTML.
  */
@@ -74,7 +112,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     const att = document.createAttribute("role");
     att.value = "option";
     option.setAttributeNode(att);
-        
+
     select.append(option);
   });
 }
