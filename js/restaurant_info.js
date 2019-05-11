@@ -6,8 +6,25 @@ var newMap;
  */
 document.addEventListener('DOMContentLoaded', (event) => {
   initMap();
+  startServiceWorker();   // function is in dbhelper.js
 });
 
+
+// This function starts up (registers) the service worker. It doesn't work
+// well to have it in a separate file since that file then has to load as well
+// and if there isn't a network connection, then the browser has to retrieve
+// an additional file from the cache and during that time a Network error message
+// is temporarily shown. The reason to put it in a separate file would be to
+// share the code with main.js.
+function startServiceWorker() {
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js').then(function() {
+    console.log("registration of service worker OK");
+  }).catch(function() {
+    console.log("registration of service worker failed.");
+  });
+}
+}
 /**
  * Initialize leaflet map
  */

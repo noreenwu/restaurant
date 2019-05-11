@@ -7,15 +7,13 @@
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    // TODO: change the site's theme, eg swap the vars in public/scss/_theme.scss
-    // Ensure at least $primary-color changes
-    // TODO: change cache name to 'wittr-static-v2'
     caches.open('restaurant-reviews-v1').then(function(cache) {
       return cache.addAll([
         '/',
         'css/styles.css',
         'js/main.js',
         'js/dbhelper.js',
+        'js/restaurant_info.js',
         'data/restaurants.json',
         'https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff',
         'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
@@ -29,7 +27,17 @@ self.addEventListener('install', function(event) {
         'http://localhost:8000/img/7.jpg',
         'http://localhost:8000/img/8.jpg',
         'http://localhost:8000/img/9.jpg',
-        'http://localhost:8000/img/10.jpg'
+        'http://localhost:8000/img/10.jpg',
+        'http://localhost:8000/restaurant.html?id=1',
+        'http://localhost:8000/restaurant.html?id=2',
+        'http://localhost:8000/restaurant.html?id=3',
+        'http://localhost:8000/restaurant.html?id=4',
+        'http://localhost:8000/restaurant.html?id=5',
+        'http://localhost:8000/restaurant.html?id=6',
+        'http://localhost:8000/restaurant.html?id=7',
+        'http://localhost:8000/restaurant.html?id=8',
+        'http://localhost:8000/restaurant.html?id=9',
+        'http://localhost:8000/restaurant.html?id=10'
       ]);
     })
   );

@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   startServiceWorker();
 });
 
+
+// This function starts up (registers) the service worker.
+
 function startServiceWorker() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js').then(function() {
