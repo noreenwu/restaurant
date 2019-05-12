@@ -1,4 +1,4 @@
-let staticCacheName = 'restaurant-reviews-v5';
+let staticCacheName = 'restaurant-reviews-v6';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -10,6 +10,7 @@ self.addEventListener('install', function(event) {
         'js/dbhelper.js',
         'js/restaurant_info.js',
         'data/restaurants.json',
+        '/favicon.ico',
         'https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff',
         'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
         'https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff',
@@ -45,7 +46,7 @@ self.addEventListener('activate', function(event) {
 
     // remove old cache(s)
 
-    caches.delete('restaurant-reviews-v4')
+    caches.delete('restaurant-reviews-v5')
 
     // proper way to delete old caches:
 

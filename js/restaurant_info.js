@@ -10,7 +10,6 @@ const MAX_STARS = 5;
 document.addEventListener('DOMContentLoaded', (event) => {
   initMap();
   startServiceWorker();   // function is in dbhelper.js
-  // starGraph(4,3);
 });
 
 
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 // share the code with main.js.
 function startServiceWorker() {
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js').then(function() {
+  navigator.serviceWorker.register('/service-worker-rdetail.js').then(function() {
     console.log("registration of service worker OK");
   }).catch(function() {
     console.log("registration of service worker failed.");
@@ -171,7 +170,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 createReviewHTML = (review) => {
   const li = document.createElement('li');
   li.classList.add("review");
-  
+
   const name = document.createElement('span');
   name.classList.add('review-reviewer');
   name.innerHTML = review.name;
