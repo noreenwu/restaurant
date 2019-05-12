@@ -75,10 +75,11 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   });
 
    let nSelections = select.querySelectorAll('[role=option]');
+   // debugger
    console.log(nSelections.length);
 
-   select.addEventListener('mouseenter', hello);
-   nSelections[1].addEventListener('mousedown', again);
+   select.addEventListener('focus', hello);
+   nSelections[1].addEventListener('focus', again);
 }
 
 function hello() {

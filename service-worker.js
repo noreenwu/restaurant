@@ -1,13 +1,8 @@
-// self.addEventListener('fetch', function(event) {
-//   event.respondWith(
-//     new Response('hello world')
-//   );
-// });
 
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('restaurant-reviews-v1').then(function(cache) {
+    caches.open('restaurant-reviews-v2').then(function(cache) {
       return cache.addAll([
         '/',
         'css/styles.css',
@@ -18,6 +13,7 @@ self.addEventListener('install', function(event) {
         'https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff',
         'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
         'https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
         'http://localhost:8000/img/1.jpg',
         'http://localhost:8000/img/2.jpg',
         'http://localhost:8000/img/3.jpg',

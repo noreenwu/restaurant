@@ -1,5 +1,8 @@
 let restaurant;
 var newMap;
+const FILLED_STARS = "<span class=\"fa fa-star star-checked\"></span>";
+const UNFILLED_STARS = "<span class=\"fa fa-star\"></span>";
+const MAX_STARS = 5;
 
 /**
  * Initialize map as soon as the page is loaded.
@@ -7,6 +10,7 @@ var newMap;
 document.addEventListener('DOMContentLoaded', (event) => {
   initMap();
   startServiceWorker();   // function is in dbhelper.js
+  // starGraph(4,3);
 });
 
 
@@ -178,6 +182,11 @@ createReviewHTML = (review) => {
   rating.innerHTML = `Rating: ${review.rating}`;
   li.appendChild(rating);
 
+  const starRating = document.createElement('p');
+  // console.log("calling starGraph with ", review.rating, MAX_STARS - review.rating);
+  starRating.innerHTML = starGraph(review.rating, MAX_STARS - review.rating);
+  li.appendChild(starRating);
+
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
   li.appendChild(comments);
@@ -209,4 +218,22 @@ getParameterByName = (name, url) => {
   if (!results[2])
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+
+/*
+ *  Produce star bar graph to represent rating
+ */
+starGraph = (filled, unfilled) => {
+  let allstars = "";
+
+  for(let i=0;i<filled;i++) {
+    allstars += FILLED_STARS;
+  }
+  for(let j=0;j<unfilled;j++) {
+    allstars += UNFILLED_STARS;
+  }
+  // console.log("allstars in starGraph is " + allstars);
+  return allstars;
+
 }

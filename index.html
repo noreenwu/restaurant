@@ -23,8 +23,11 @@
     <section>
       <div class="filter-options">
         <span class="filter-label">Filter Results: </span>
-        <select role="listbox" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-          <option value="all" role="option" aria-setsize="4" aria-posinset="1">All Neighborhoods</option>
+        <select role="listbox" id="neighborhoods-select"
+                name="neighborhoods"
+                aria-setsize="4"
+                onchange="updateRestaurants()">
+          <option value="all" role="option"  aria-posinset="1">All Neighborhoods</option>
 
         </select>
         <label class="screenreader" for="neighborhoods-select">Select a neighborhood</label>
