@@ -170,17 +170,21 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
-  const name = document.createElement('p');
+  li.classList.add("review");
+  
+  const name = document.createElement('span');
+  name.classList.add('review-reviewer');
   name.innerHTML = review.name;
   li.appendChild(name);
 
-  const date = document.createElement('p');
-  date.innerHTML = review.date;
+  const date = document.createElement('span');
+  date.classList.add("review-date");
+  date.innerHTML = " on " + review.date;
   li.appendChild(date);
 
-  const rating = document.createElement('p');
-  rating.innerHTML = `Rating: ${review.rating}`;
-  li.appendChild(rating);
+  // const rating = document.createElement('p');
+  // rating.innerHTML = `Rating: ${review.rating}`;
+  // li.appendChild(rating);
 
   const starRating = document.createElement('p');
   // console.log("calling starGraph with ", review.rating, MAX_STARS - review.rating);

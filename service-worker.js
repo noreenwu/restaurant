@@ -1,8 +1,8 @@
-
+let staticCacheName = 'restaurant-reviews-v4';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('restaurant-reviews-v2').then(function(cache) {
+    caches.open(staticCacheName).then(function(cache) {
       return cache.addAll([
         '/',
         'css/styles.css',
@@ -39,6 +39,28 @@ self.addEventListener('install', function(event) {
   );
 });
 
+
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+
+    // remove old cache(s)
+
+    caches.delete('restaurant-reviews-v3')
+
+    // proper way to delete old caches:
+
+    // return Promise.all(
+    //   caches.keys().then(function(cacheNames) {
+    //     cacheNames.filter(function(cacheName) {
+    //       return cacheName.startsWith('restaurant-') &&
+    //         cacheName != staticCacheName
+    //     }).map(function(cacheName) {
+    //         return cache.delete(cacheName);
+    //     })
+    //   })
+    // );
+  )}
+);
 
 self.addEventListener('fetch', function(event) {
 
