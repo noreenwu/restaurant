@@ -8,7 +8,6 @@ self.addEventListener('install', function(event) {
         'css/styles.css',
         'js/main.js',
         'js/dbhelper.js',
-        'js/restaurant_info.js',
         'data/restaurants.json',
         '/favicon.ico',
         'https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff',
