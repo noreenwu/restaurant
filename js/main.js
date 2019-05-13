@@ -223,10 +223,12 @@ createRestaurantHTML = (restaurant) => {
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
+  neighborhood.classList.add("listing-neighborhood");
   li.append(neighborhood);
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
+  address.classList.add("listing-address");
   li.append(address);
 
   /* aria-label introduced to links to restaurant detail pages

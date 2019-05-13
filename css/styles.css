@@ -115,7 +115,6 @@ nav h1 a {
 }
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
-  width: 100%;
 	padding: 20px 45px;
   background-color: #104673;
 	display: flex;
@@ -135,7 +134,25 @@ nav h1 a {
   margin-left: 10px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 200px) {
+	.filter-label {
+  	font-size: .8em;
+		padding-bottom: 3px;
+		width: 100%;
+	}
+	.filter-options select {
+	  font-size: .7em;
+		padding: 2px;
+	}
+	nav h1 a	{
+		font-size: .6em;
+	}
+	.filter-options {
+		width: 60%;
+	}
+}
+
+@media screen and (min-width: 400px) {
 	.filter-label {
   	font-size: .7em;
 		width: 100%;
@@ -145,24 +162,17 @@ nav h1 a {
 		padding: 2px;
 	}
 	nav h1 a	{
-		font-size: 1em;
+		font-size: .8em;
 	}
-}
-
-@media screen and (max-width: 599px) {
-	.filter-label {
-  	font-size: 1em;
-	}
-	.filter-options select {
-	  font-size: .9em;
-		padding: 5px;
-	}
-	nav h1 a	{
-		font-size: 1em;
+	.filter-options {
+		width: 85%;
 	}
 }
 
 @media screen and (min-width: 600px) and (max-width: 800px) {
+	.filter-options {
+		width: 90%;
+	}
 	.filter-label {
   	font-size: 1.3em;
 	}
@@ -174,6 +184,20 @@ nav h1 a {
 	}
 }
 
+@media screen and (min-width: 800px) {
+	.filter-options {
+		width: 95%;
+	}
+	.filter-label {
+  	font-size: 1.5em;
+	}
+	.filter-options select {
+	  font-size: 1.3em;
+	}
+	nav h1 a	{
+		font-size: 1.3em;
+	}
+}
 /* ====================== Restaurant Listing ====================== */
 /* settings common to all sizes */
 
@@ -332,6 +356,9 @@ nav h1 a {
 	#reviews-container ul {
 		width: 80%;
 	}
+	#restaurants-list p {
+		font-size: .8em;
+	}
 }
 
 @media only screen and (min-width: 400px) {
@@ -360,6 +387,9 @@ nav h1 a {
 	#reviews-container ul {
 		width: 90%;
 	}
+	#restaurants-list p {
+		font-size: .9em;
+	}
 }
 
 @media only screen and (min-width: 600px) {
@@ -373,6 +403,9 @@ nav h1 a {
 	}
 	#reviews-container ul {
 		width: 90%;
+	}
+	#restaurants-list p {
+		font-size: 1em;
 	}
 }
 @media only screen and (min-width: 850px) {
@@ -397,6 +430,9 @@ nav h1 a {
 	}
 	#reviews-container ul {
 		width: 95%;
+	}
+	#restaurants-list p {
+		font-size: 1.2em;
 	}
 }
 
@@ -489,4 +525,10 @@ label.screenreader  {
 }
 #footer strong {
 	font-size: 1.2em;
+}
+
+#errorcontent {
+	text-align: center;
+	margin: 200px 0;
+	font-size: 2em;
 }
