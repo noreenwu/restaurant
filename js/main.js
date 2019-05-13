@@ -1,3 +1,9 @@
+/* Noreen Wu
+ * Udacity Front-end Developer: Restaurant Reviews
+ * May 2019
+ */
+
+
 let restaurants,
   neighborhoods,
   cuisines
@@ -15,9 +21,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   startServiceWorker();
 });
 
-
-// This function starts up (registers) the service worker.
-
+/**
+ * This function starts up (registers) the service worker.
+**/
 function startServiceWorker() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js').then(function() {
@@ -38,9 +44,6 @@ fetchNeighborhoods = () => {
     } else {
       self.neighborhoods = neighborhoods;
       fillNeighborhoodsHTML();
-      /* todo: add an event listener to the filter listbox so that
-        voiceover works on the hovered over selections */
-
     }
   });
 }
@@ -50,8 +53,6 @@ fetchNeighborhoods = () => {
  */
 fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   const select = document.getElementById('neighborhoods-select');
-  // item.addEventListener('mouseover', this.handleHoverOnItem.bind(this));
-  // item.addEventListener('mousedown', this.handleClickOnItem.bind(this), true);
 
   let i = 2;    // aria-posinset
   neighborhoods.forEach(neighborhood => {
@@ -73,22 +74,8 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
 
     select.append(option);
   });
-
-   let nSelections = select.querySelectorAll('[role=option]');
-   // debugger
-   console.log(nSelections.length);
-
-   select.addEventListener('focus', hello);
-   nSelections[1].addEventListener('focus', again);
 }
 
-function hello() {
-  console.log("hello");
-}
-
-function again() {
-  console.log("again");
-}
 /**
  * Fetch all cuisines and set their HTML.
  */
@@ -199,6 +186,10 @@ resetRestaurants = (restaurants) => {
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
   const ul = document.getElementById('restaurants-list');
+  if (restaurants.length == 0) {
+    ul.append("There are no restaurant listings in that category. Try another cuisine or neighborhood.");
+    return;
+  }
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
   });

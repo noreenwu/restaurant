@@ -1,4 +1,4 @@
-let staticCacheName = 'restaurant-reviews-detail-v1';
+let staticCacheName = 'restaurant-reviews-detail-v4';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -40,6 +40,12 @@ self.addEventListener('install', function(event) {
 });
 
 
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    // remove old cache(s)
+    caches.delete('restaurant-reviews-detail-v3')
+  )}
+);
 
 self.addEventListener('fetch', function(event) {
 

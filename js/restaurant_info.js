@@ -1,5 +1,13 @@
+/* Noreen Wu
+ * Udacity Front-end Developer: Restaurant Reviews
+ * May 2019
+ */
+
+
 let restaurant;
 var newMap;
+
+// These constants are used in the generation of the star graph for review ratings.
 const FILLED_STARS = "<span class=\"fa fa-star star-checked\"></span>";
 const UNFILLED_STARS = "<span class=\"fa fa-star\"></span>";
 const MAX_STARS = 5;

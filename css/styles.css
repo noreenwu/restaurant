@@ -44,6 +44,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 .restaurants-container {
 	display: inline-block;
 }
+
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
@@ -56,7 +57,7 @@ nav h1 {
 }
 nav h1 a {
   color: #fff;
-  font-size: 2em;
+  /* font-size: 2em; */
   font-weight: normal;
   letter-spacing: 10px;
   text-transform: uppercase;
@@ -74,33 +75,28 @@ nav h1 a {
 #breadcrumb li {
     display: inline;
 }
-
 /* Add a slash symbol (/) before/behind each list item */
 #breadcrumb li+li:before {
     padding: 8px;
     color: black;
     content: "/\00a0";
 }
-
 /* Add a color to all links inside the list */
 #breadcrumb li a {
     /* color: #0275d8; */
 		color: #104673;
     text-decoration: none;
 }
-
 /* Add a color on mouse-over */
 #breadcrumb li a:hover {
     color: #01447e;
     text-decoration: underline;
 }
-
 @media screen and (max-width: 320px) {
 	nav h1 a {
 	  font-size: .6em;
 	}
 }
-
 @media screen and (max-width: 599px) {
 	nav h1 a {
 	  font-size: 1.2em;
@@ -133,7 +129,13 @@ nav h1 a {
 	padding: 10px;
   margin-left: 10px;
 }
-
+/* labels are used to provide screenreader context for the filtering widget,
+   but they shouldn't actually appear */
+label.screenreader  {
+	position: absolute;
+	text-indent: -10000px;
+}
+/*  parameters for header and filter widget that depend on viewport */
 @media screen and (min-width: 200px) {
 	.filter-label {
   	font-size: .8em;
@@ -151,7 +153,6 @@ nav h1 a {
 		width: 60%;
 	}
 }
-
 @media screen and (min-width: 400px) {
 	.filter-label {
   	font-size: .7em;
@@ -168,13 +169,14 @@ nav h1 a {
 		width: 85%;
 	}
 }
-
 @media screen and (min-width: 600px) and (max-width: 800px) {
 	.filter-options {
 		width: 90%;
 	}
 	.filter-label {
   	font-size: 1.3em;
+		width: 85%;
+    text-align: left;
 	}
 	.filter-options select {
 	  font-size: 1em;
@@ -183,23 +185,35 @@ nav h1 a {
 		font-size: 1em;
 	}
 }
-
 @media screen and (min-width: 800px) {
 	.filter-options {
 		width: 95%;
 	}
 	.filter-label {
-  	font-size: 1.5em;
+  	font-size: 1.3em;
+		width: 30%;
+    text-align: right;
 	}
 	.filter-options select {
 	  font-size: 1.3em;
 	}
+	/* nav h1 a	{
+		font-size: 2em;
+	} */
+}
+@media screen and (min-width: 1000px) {
+	.filter-label {
+  	font-size: 1.3em;
+		width: 15%;
+    text-align: right;
+	}
 	nav h1 a	{
-		font-size: 1.3em;
+		font-size: 2em;
 	}
 }
+
 /* ====================== Restaurant Listing ====================== */
-/* settings common to all sizes */
+/* settings common to all viewport sizes */
 
 #restaurants-list {
 	background-color: #f3f3f3;
@@ -218,7 +232,6 @@ nav h1 a {
 	display: block;
 	/* margin: 0; */
 }
-
 #restaurants-list li h1 {
 	/* color: #f18200; */
 	color: #720500;
@@ -249,6 +262,8 @@ nav h1 a {
 	text-transform: uppercase;
 }
 
+
+/* restaurant list settings that need to change with viewport */
 @media screen and (max-width: 599px) {
 	#restaurants-list li {
 		margin-bottom: 10px;
@@ -256,8 +271,6 @@ nav h1 a {
 		padding-bottom: 15px;
 	}
 }
-
-
 @media screen and (min-width: 600px) and (max-width: 800px) {
 	#restaurants-list li {
 		width: 47%;
@@ -265,8 +278,6 @@ nav h1 a {
 		margin-bottom: 20px;
 	}
 }
-
-
 @media screen and (min-width: 801px) and (max-width: 1229px) {
 	#restaurants-list li {
 		width: 48%;
@@ -274,8 +285,6 @@ nav h1 a {
 		margin-bottom: 30px;
 	}
 }
-
-
 @media screen and (min-width: 1230px) {
 	#restaurants-list li {
 	  padding: 20px 30px 35px;
@@ -285,9 +294,7 @@ nav h1 a {
 	}
 }
 
-
 /* ====================== Restaurant Details ====================== */
-
 .inside header {
   width: 100%;
   z-index: 1000;
@@ -335,7 +342,6 @@ nav h1 a {
 	padding: 24px 0 10px 30px;
   width: 45%;
 }
-
 @media only screen and (min-width: 200px) {
 	#restaurant-container {
 		padding: 0;
@@ -360,7 +366,6 @@ nav h1 a {
 		font-size: .8em;
 	}
 }
-
 @media only screen and (min-width: 400px) {
 	#restaurant-container {
 		padding: 0;
@@ -391,7 +396,6 @@ nav h1 a {
 		font-size: .9em;
 	}
 }
-
 @media only screen and (min-width: 600px) {
 	#restaurant-hours td {
 		font-size: 1em;
@@ -437,14 +441,11 @@ nav h1 a {
 }
 
 
-
+/* reviews settings common to all viewports */
 #reviews-container {
-  /* padding: 30px 40px 80px; */
-	/* background-color: #c3c3c3; */
 	padding-bottom: 35px;
 	margin: 20px;
 }
-
 #reviews-container h2 {
   color: #720500;
   font-size: 2em;
@@ -465,11 +466,9 @@ nav h1 a {
   /* margin: 0 0 10px; */
 	font-size: 1.2em;
 }
-
 #restaurant-hours {
 	margin: auto;
 }
-
 #restaurant-hours td {
   color: #666;
 	font-size: 1.2em;
@@ -477,7 +476,7 @@ nav h1 a {
 }
 
 
-/* for restaurant detail page */
+/* for Restaurant Detail page, set up the restaurant info and map as top section */
 section#top {
 	display: flex;
 	flex-wrap: wrap;
@@ -485,33 +484,23 @@ section#top {
 	width: 100%;
 }
 
-
-label.screenreader  {
-	position: absolute;
-	text-indent: -10000px;
-}
-
+/* for Restaurant Detail page, settings specific to the reviews and star-ratings */
 .star-checked {
   color: orange;
 }
-
-
 .review-date {
 	font-size: 1em;
 	font-style: italic;
 }
-
 .review-reviewer {
 	padding-top: 10px;
 	font-size: 1.2em;
 	font-weight: bold;
 }
-
 .review-hr-rule {
 	border: 2px solid #104673;
 	width: 95%;
 }
-
 
 /* footer section */
 #footer {
@@ -526,7 +515,6 @@ label.screenreader  {
 #footer strong {
 	font-size: 1.2em;
 }
-
 #errorcontent {
 	text-align: center;
 	margin: 200px 0;
