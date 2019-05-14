@@ -315,10 +315,7 @@ label.screenreader  {
 #restaurant-img {
 	width: 95%;
 }
-#restaurant-address {
-  font-size: 1.2em;
-  /* margin: 10px 0px; */
-}
+
 #restaurant-cuisine {
   /* font-size: 1.5em; */
   background-color: #104673;
@@ -340,19 +337,22 @@ label.screenreader  {
 	#restaurant-name {
 	  font-size: 1em;
 	}
+	#restaurant-address {
+	  font-size: 1em;
+	}
 	#restaurant-cuisine {
 	  font-size: .8em;
 	}
 	#restaurant-container {
 		padding: 0;
 	  width: 100%;
-		margin: 20px;
+		margin: 0;
 	}
 	.inside #map-container {
 		padding: 0;
 		min-height: 400px;
 		width: 100%;
-		margin: 20px;
+		margin: 0 5% 0 0;
 	}
 
 	.inside #map {
@@ -361,17 +361,21 @@ label.screenreader  {
 	  height: 50%;
 	  width: 100%;
 	}
-
-	#restaurant-hours td {
-		font-size: .5em;
-		display: list-item;
-		list-style: none;
+	#reviews-container {
+		margin-top: 80px;
+	}
+	#reviews-container h2 {
+	  font-size: 1.1em;
 	}
 	#reviews-container ul {
 		width: 80%;
 	}
 	#restaurants-list p {
 		font-size: .8em;
+	}
+	#reviews-list li {
+  	background-color: #f3f3f3;
+	  border: 0;
 	}
 	#operating-hours {
 		border: 0;
@@ -380,13 +384,21 @@ label.screenreader  {
 		display: none;
 	}
 	#restaurant-hours-title {
-		font-size: .6em;
-		padding: 0;
+		font-size: .7em;
+		padding-top: 10px;
+	}
+	#restaurant-hours td {
+		font-size: .8em;
+		display: list-item;
+		list-style: none;
 	}
 }
 @media only screen and (min-width: 400px) {
 	#restaurant-name {
 	  font-size: 1.2em;
+	}
+	#restaurant-address {
+	  font-size: 1.1em;
 	}
 	#restaurant-cuisine {
 	  font-size: 1em;
@@ -395,6 +407,9 @@ label.screenreader  {
 		padding: 0;
 	  width: 95%;
 		margin: 20px;
+	}
+	#reviews-container h2 {
+	  font-size: 1.2em;
 	}
 	#restaurant-img {
 		width: 100%;
@@ -414,11 +429,14 @@ label.screenreader  {
 	  height: 50%;
 	  width: 100%;
 	}
-
 	#restaurant-hours td {
-		font-size: .5em;
+		font-size: .9em;
 		padding-bottom: 20px;
 		display: table-cell;
+		line-height: .7em;
+	}
+	#reviews-container {
+		margin-top: 15%;
 	}
 	#reviews-container ul {
 		width: 90%;
@@ -426,13 +444,27 @@ label.screenreader  {
 	#restaurants-list p {
 		font-size: .9em;
 	}
+	#reviews-list li {
+  	background-color: #f3f3f3;
+	  border: 0;
+	}
+	#operating-hours {
+		border: 0;
+	}
 	.review-hr-rule {
 		display: none;
+	}
+	#restaurant-hours-title {
+		font-size: .8em;
+		padding-top: 10px;
 	}
 }
 @media only screen and (min-width: 600px) {
 	#restaurant-name {
-	  font-size: 1.5em;
+	  font-size: 1.6em;
+	}
+	#restaurant-address {
+	  font-size: 1.2em;
 	}
 	#restaurant-cuisine {
 	  font-size: 1.1em;
@@ -441,12 +473,29 @@ label.screenreader  {
 		font-size: 1em;
 		padding-bottom: 20px;
 		display: table-cell;
+		line-height: 1em;
 	}
 	#restaurant-hours tr {
 		/* padding-bottom: 20px; */
 	}
+	#reviews-container {
+		margin-top: 20%;
+	}
 	#reviews-container ul {
 		width: 90%;
+	}
+	#reviews-container h2 {
+	  font-size: 1.3em;
+	}
+	#reviews-list li {
+  	background-color: #fff;
+  	border: 5px solid #c3c3c3;
+	}
+	#operating-hours {
+		border: 0;
+	}
+	.review-hr-rule {
+		display: none;
 	}
 	#restaurants-list p {
 		font-size: 1em;
@@ -463,12 +512,19 @@ label.screenreader  {
 	  height: 50%;
 	  width: 100%;
 	}
+	#restaurant-hours-title {
+		font-size: .9em;
+		padding-top: 10px;
+	}
 }
 
 
 @media only screen and (min-width: 850px) {
 	#restaurant-name {
 	  font-size: 1.8em;
+	}
+	#restaurant-address {
+	  font-size: 1.2em;
 	}
 	#restaurant-cuisine {
 	  font-size: 1.1em;
@@ -484,9 +540,20 @@ label.screenreader  {
 	#restaurant-cuisine {
 		width: 95%;
 	}
+	#reviews-container h2 {
+	  font-size: 1.4em;
+	}
+	#reviews-list li {
+  	background-color: #fff;
+  	border: 5px solid #c3c3c3;
+	}
+	#operating-hours {
+		border: 0;
+	}
 	.review-hr-rule {
 		border: 2px solid #104673;
 		width: 95%;
+		display: block;
 	}
 	.inside #map-container {
 		padding: 0;
@@ -500,11 +567,21 @@ label.screenreader  {
 	  height: 50%;
 	  width: 100%;
 	}
+	#reviews-container {
+		margin-top: 13%;
+	}
+	#restaurant-hours-title {
+		font-size: 1em;
+		padding-top: 10px;
+	}
 }
 
 @media only screen and (min-width: 1300px) {
 	#restaurant-name {
 	  font-size: 2em;
+	}
+	#restaurant-address {
+	  font-size: 1.3em;
 	}
 	#restaurant-cuisine {
 	  font-size: 1.4em;
@@ -513,6 +590,12 @@ label.screenreader  {
 		padding: 0;
 	  width: 45%;
 		margin: 40px;
+	}
+	#reviews-container {
+		margin-top: 20px;
+	}
+	#reviews-container h2 {
+	  font-size: 1.6em;
 	}
 	#restaurant-img {
 		width: 100%;
@@ -523,6 +606,13 @@ label.screenreader  {
 	.inside #map-container {
 		width: 45%;
 	}
+	.inside #map {
+	  background-color: #ccc;
+		border: 1px solid #104673;
+	  height: 50%;
+	  width: 100%;
+		padding: 10px 0;
+	}
 	#restaurant-hours td {
 		font-size: 1em;
 		padding-bottom: 10px;
@@ -531,6 +621,13 @@ label.screenreader  {
 	#reviews-container ul {
 		width: 95%;
 	}
+	#reviews-list li {
+  	background-color: #fff;
+  	border: 5px solid #c3c3c3;
+	}
+	#operating-hours {
+		border: 0;
+	}	
 	#restaurants-list p {
 		font-size: 1.2em;
 	}
@@ -546,8 +643,7 @@ label.screenreader  {
 		display: block;
 	}
 	#restaurant-hours-title {
-		text-align: center;
-		font-size: 1.3em;
+		font-size: 1.2em;
 		padding-top: 10px;
 	}
 }
@@ -555,13 +651,15 @@ label.screenreader  {
 
 
 /* reviews settings common to all viewports */
+#restaurant-hours-title {
+	text-align: center;
+}
+
 #reviews-container {
 	padding-bottom: 35px;
-	margin: 20px;
 }
 #reviews-container h2 {
   color: #720500;
-  font-size: 2em;
   font-weight: normal;
 	padding: 25px 40px 0;
 }
@@ -569,9 +667,7 @@ label.screenreader  {
 	width: 95%;
 }
 #reviews-list li {
-  background-color: #fff;
   list-style-type: none;
-  border: 5px solid #c3c3c3;
 	padding: 15px 20px;
 	margin-bottom: 15px;
 }
