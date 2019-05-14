@@ -1,4 +1,4 @@
-let staticCacheName = 'restaurant-reviews-detail-v5';
+let staticCacheName = 'restaurant-reviews-detail-v9';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -24,16 +24,7 @@ self.addEventListener('install', function(event) {
         '/img/8.jpg',
         '/img/9.jpg',
         '/img/10.jpg',
-        'http://localhost:8000/restaurant.html?id=1',
-        'http://localhost:8000/restaurant.html?id=2',
-        'http://localhost:8000/restaurant.html?id=3',
-        'http://localhost:8000/restaurant.html?id=4',
-        'http://localhost:8000/restaurant.html?id=5',
-        'http://localhost:8000/restaurant.html?id=6',
-        'http://localhost:8000/restaurant.html?id=7',
-        'http://localhost:8000/restaurant.html?id=8',
-        'http://localhost:8000/restaurant.html?id=9',
-        'http://localhost:8000/restaurant.html?id=10'
+        '/restaurant.html'
       ]);
     })
   );
@@ -43,7 +34,7 @@ self.addEventListener('install', function(event) {
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     // remove old cache(s)
-    caches.delete('restaurant-reviews-detail-v4')
+    caches.delete('restaurant-reviews-detail-v8')
   )}
 );
 
@@ -53,7 +44,7 @@ self.addEventListener('fetch', function(event) {
   // If there isn't, fetch from the network.
 
   event.respondWith(
-    caches.match(event.request).then(function(response) {
+    caches.match(event.request, {ignoreSearch: true}).then(function(response) {
       if (response) return response;
       return fetch(event.request);
     })
