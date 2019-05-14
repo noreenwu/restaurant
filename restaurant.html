@@ -16,16 +16,12 @@
 <body class="inside">
   <!-- Beginning header -->
   <header>
-    <!-- Beginning nav -->
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
-    <!-- Beginning breadcrumb -->
     <ul id="breadcrumb" >
       <li><a href="/">Home</a></li>
     </ul>
-    <!-- End breadcrumb -->
-    <!-- End nav -->
   </header>
   <!-- End header -->
 
@@ -40,12 +36,18 @@
         <img id="restaurant-img">
         <p id="restaurant-cuisine"></p>
 
-        <table id="restaurant-hours"></table>
+        <!-- <table id="restaurant-hours"></table> -->
+
       </section>
       <!-- end restaurant -->
 
       <section aria-label="map" id="map-container">
         <div id="map"></div>
+        <!-- <label id="restaurant-hours-label" for="restaurant-hours">Hours:</label> -->
+        <section aria-label="operating-hours" id="operating-hours">
+          <p id="restaurant-hours-title">Hours</p>
+          <table id="restaurant-hours"></table>
+        </section>
       </section>
 
     </section> <!-- end of top -->
