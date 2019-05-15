@@ -154,6 +154,13 @@ class DBHelper {
   }
 
   /**
+    * Restaurant photo description
+    */
+  static imageDescrForRestaurant(restaurant) {
+    return(`${restaurant.photodescript}`);
+  }
+
+  /**
    * Map marker for a restaurant.
    */
    static mapMarkerForRestaurant(restaurant, map) {

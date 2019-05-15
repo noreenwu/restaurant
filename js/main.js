@@ -205,7 +205,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.alt = " ";     /* restaurant name is already in header and on link */
+  image.alt = DBHelper.imageDescrForRestaurant(restaurant);  // pull a description of the photo for alt text
   li.append(image);
 
   const name = document.createElement('h1');
