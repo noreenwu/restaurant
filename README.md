@@ -1,33 +1,96 @@
-# Mobile Web Specialist Certification Course
+# Udacity Front-End Developer Restaurant Review Project
+# Base code provided by Udacity and modified by Noreen Wu, May 2019
 ---
-#### _Three Stage Course Material Project - Restaurant Reviews_
 
-## Project Overview: Stage 1
+## Project Overview
 
-For the **Restaurant Reviews** projects, you will incrementally convert a static webpage to a mobile-ready web application. In **Stage One**, you will take a static design that lacks accessibility and convert the design to be responsive on different sized displays and accessible for screen reader use. You will also add a service worker to begin the process of creating a seamless offline experience for your users.
+This application consists of two web pages, a restaurant listing page and a restaurant detail page.
+The listing page includes a widget for filtering results by neighborhood and cuisine. The user
+may then click through to see detailed information about the restaurant: operating hours around
+reviews written by previous diners.
 
-### Specification
+A code base was provided by Udacity and the application has been modified to improve its usability:
+it utilizes contrasting colors for low vision users and includes ARIA tags and features that
+enable screenreaders to function more effectively. Once a single connection has been established
+for each page, the relevant files and resources are cached so that the application can still
+work offline.
 
-You have been provided the code for a restaurant reviews website. The code has a lot of issues. It’s barely usable on a desktop browser, much less a mobile device. It also doesn’t include any standard accessibility features, and it doesn’t work offline at all. Your job is to update the code to resolve these issues while still maintaining the included functionality.
+### Design Changes
 
-### Project Rubric
+Primary design changes to the listings page included the change of colors to be more complementary
+but also more readable for low-vision readers. The application was previously not displaying the
+matching list of restaurants in a grid format: only a single vertical column was shown
+regardless of the width of the viewport. The filter by neighborhood and cuisine controls
+were not fully visible.
 
-Your project will be evaluated by a Udacity code reviewer according to the [Restaurant Reviews project rubric](https://review.udacity.com/#!/rubrics/1090/view). Please review for detailed project requirements. The rubric should be a resource you refer to periodically to make sure your project meets specifications.
+Primary design changes to the restaurant detail page included the change again to higher
+contrast colors and reducing the map to a much smaller size. The restaurant reviews no longer
+appear in the left column but stretch across the width of the viewport underneath the restaurant
+detail information.
 
-### What do I do from here?
+Neither of these pages were acceptably responsive and neither one produced meaningful content
+when the server was offline.
 
-1. In this folder, start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer.
+These changes, plus the addition of appropriate ARIA labels were introduced, to provide a meaningful
+interaction for screenreader users.
 
-    * In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8000` (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
-   * Note -  For Windows systems, Python 3.x is installed as `python` by default. To start a Python 3.x server, you can simply enter `python -m http.server 8000`.
-2. With your server running, visit the site: `http://localhost:8000`, and look around for a bit to see what the current experience looks like.
-3. Explore the provided code, and start making a plan to implement the required features in three areas: responsive design, accessibility and offline use.
-4. Write code to implement the updates to get this site on its way to being a mobile-ready website.
+A new favicon was introduced.
 
-## Leaflet.js and Mapbox:
+### Required files
 
-This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/). You need to replace `<your MAPBOX API KEY HERE>` with a token from [Mapbox](https://www.mapbox.com/). Mapbox is free to use, and does not require any payment information.
+For index.html (the restaurant listing page):
+   index.html
+   js/main.js
+   js/dbhelper.js
+   service-worker.js
+   css/styles.css
+   img/1.jpg
+   img/2.jpg
+   img/3.jpg
+   img/4.jpg
+   img/5.jpg
+   img/6.jpg
+   img/7.jpg
+   img/8.jpg
+   img/9.jpg
+   img/10.jpg
+   data/restaurants.json
 
-### Note about ES6
+For restaurant.html (the restaurant detail page):
+   restaurant.html
+   js/restaurant_info.js
+   js/dbhelper.js
+   css/styles.css
+   img/1.jpg
+   img/2.jpg
+   img/3.jpg
+   img/4.jpg
+   img/5.jpg
+   img/6.jpg
+   img/7.jpg
+   img/8.jpg
+   img/9.jpg
+   img/10.jpg
+   data/restaurants.json
+   service-worker-rdetail.js
 
-Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future-proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write.
+
+### Implementation Notes
+
+To achieve the desired redesign required using the Chrome-provided Audit
+for accessibility and experimentation within the Chrome Devtools for
+appropriate colors.
+
+Aria labels and attributes were added to both the html files directly and
+through the Javascript which dynamically generates some of the data derived
+from the json file.
+
+Finally, to implement caching, service workers are registered for each
+of the pages. These are registered after the DOM has loaded. Once a fetch
+is done, all of the needed files are added to the cache for use offline.
+
+
+### Operational Notes
+
+To run this application locally, use the Python SimpleHTTPServer:
+   python -m SimpleHTTPServer 8000 &
