@@ -551,9 +551,7 @@ label.screenreader  {
 		border: 0;
 	}
 	.review-hr-rule {
-		border: 2px solid #104673;
-		width: 95%;
-		display: block;
+		display: none;
 	}
 	.inside #map-container {
 		padding: 0;
