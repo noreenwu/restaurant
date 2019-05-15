@@ -592,7 +592,7 @@ label.screenreader  {
 		margin: 40px;
 	}
 	#reviews-container {
-		margin-top: 20px;
+		margin-top: 10px;
 	}
 	#reviews-container h2 {
 	  font-size: 1.6em;
@@ -627,7 +627,7 @@ label.screenreader  {
 	}
 	#operating-hours {
 		border: 0;
-	}	
+	}
 	#restaurants-list p {
 		font-size: 1.2em;
 	}
